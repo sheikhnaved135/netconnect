@@ -17,7 +17,7 @@ import { setSocket } from "./redux/socketSlice";
 import { setOnlineUser } from "./redux/chatSlice";
 import { setLikeNotification } from "./redux/rtnSlice";
 import ProtectedRoute from "./component/ProtectedRoute";
-function App() {
+
   // const [count, setCount] = useState(0);
   const browserRouter = createBrowserRouter([
     {
@@ -36,6 +36,7 @@ function App() {
     },
     { path: "/signup", element: <Signup /> },
   ]);
+function App() {
   const { user } = useSelector((store) => store.auth);
   const dispatch = useDispatch();
   const {socket} = useSelector(store=>store.socketio)
